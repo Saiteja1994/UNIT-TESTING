@@ -1,0 +1,82 @@
+<p>student works!</p>
+
+<button (click)="studentSchoolResult()">GetResult</button>
+
+<h1>{{studentRes}}</h1>
+
+<h1>{{course | uppercase}}</h1>
+<h1>{{course | lowercase}}</h1> 
+<h1>{{size | filepipe}}</h1>
+
+<button id="btnIncreaseNumber" (click)="incrementNumber()" class="btn btn-primary">Increase Number</button>
+<button id="btnDecreaseNumber" (click)="decrementNumber()" class="btn btn-primary" style="margin-left: 10px">Decrease Number</button>
+
+<h2>{{CountNumber}}</h2>
+
+<h3 id="course">{{course}}</h3>
+
+<input id="usenum" type="{{type}}" [readonly]="isReadOnly">
+
+<p [ngClass]="redColor" id="header">Student Portal</p>
+
+<h4 [ngClass]="number1> 10 ? 'font-blue' : 'font-red'" id="header1">is num</h4>
+
+<h5 [ngStyle]="{'color' : (number1 > 10 ? 'black' : 'blue')}" id="header2">ngStyle</h5>
+
+<button type="button" [attr.aria-label]='arialabel' id="buttonId">Save</button>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th [attr.colspan] = 'columspan' id="colId">{{pageHeader}}</th>
+        </tr>
+    </thead>
+</table>
+
+<button id="button1" (click)="button1Click()" style="color: blue"></button>
+<button id="button2" on-click="button2Click()" style="color:blue"></button>
+<input id="textbox1" (input)="onChangeEvent()"/>
+<input id="textbox2" (input)="onChangeLabelEvent($event)"/>
+<h5>{{label}}</h5>
+
+
+<input type="text" class="form-control" id="name" [(ngModel)]="studentName">
+<h6>{{studentName}}</h6>
+<button (click)="setName()" id="button1">button11</button>
+
+<div *ngIf="num >= 20" id="div1">
+    number is gretaer than 20
+</div>
+
+<div *ngIf="num < 20" id="div2">
+    number is less than 20
+</div>
+<div *ngIf="num>=20;then trueCase;else falseCase" id="div3"></div>
+
+<ng-template #trueCase>
+    <p id="ng1">num is greater than 20 ng-template</p>
+</ng-template>
+
+<ng-template #falseCase>
+    <p id="ng2">num is less than 20 ng-template</p>
+</ng-template>
+
+<div [ngSwitch]="selectNum" id="div5">
+        <div *ngSwitchCase="'one'" id="div6">One Is Selected</div>
+        <div *ngSwitchCase="'two'" id="div7">Two Is Selected</div>
+        <div *ngSwitchDefault id="div8">Defualt Option</div>
+</div>
+
+<div *ngFor="let item of colorNames" class="ngFor1">
+    <div>{{item}}</div>
+</div>
+
+<p style="color:red">arrayList for color</p>
+<div *ngFor="let list of Colorlist" class="ngFor2">
+    <div>{{list.name}}--{{list.id}}</div>
+</div>
+
+<p style="color: green">array list for ngFor properties</p>
+<div *ngFor="let item of Colorlist; let i=index; let f=first;let l=last;let e =even;let o=odd;" class="ngFor3">
+    <div>{{i}}-{{f}}-{{l}}-{{e}}-{{o}}</div>
+</div>
